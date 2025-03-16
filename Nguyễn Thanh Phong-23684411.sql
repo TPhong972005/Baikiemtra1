@@ -187,9 +187,9 @@ AND YEAR(OrderDate) = 1997
 AND MONTH(OrderDate) BETWEEN 4 AND 6
 ORDER BY SupplierID, ProductID
 --- CAU 7
-SELECT ProductID, ProductName
-FROM Products
-WHERE UnitPrice = (SELECT UnitPrice FROM OrderDetails WHERE Products.ProductID = OrderDetails.ProductID)
+SELECT *
+FROM Products,OrderDetails
+WHERE Products.UnitPrice =OrderDetails.Unitprice 
 --- cau 8
 SELECT Products.ProductID, ProductName
 FROM Products, OrderDetails
